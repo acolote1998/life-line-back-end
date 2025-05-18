@@ -5,6 +5,8 @@ import com.akiacevedo.life_line_back_end.repository.DayRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DayService {
 private final DayRepository repository;
@@ -20,5 +22,9 @@ private final DayRepository repository;
                 .filter(day -> day.getId()==id)
                 .findFirst()
                 .orElse(null);
+    }
+
+    public List<Day> getDays(){
+    return repository.getDays();
     }
 }
