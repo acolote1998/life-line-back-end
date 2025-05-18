@@ -628,5 +628,145 @@
     "description": "Was stuck in meetings all day and barely got to do anything I actually needed to do.",
     "score": 4,
     "date": "2025/02/16"
+  },
+  {
+    "id": 90,
+    "readOnly": true,
+    "description": "Had a lazy day at home and couldn’t shake off the feeling of boredom. Nothing really happened.",
+    "score": 4,
+    "date": "2025/02/21"
+  },
+  {
+    "id": 91,
+    "readOnly": true,
+    "description": "Received a thoughtful message from an old friend. It totally brightened my day.",
+    "score": 9,
+    "date": "2025/02/26"
+  },
+  {
+    "id": 92,
+    "readOnly": true,
+    "description": "Woke up feeling sick and had to cancel all my plans. Stayed in bed most of the day.",
+    "score": 2,
+    "date": "2025/03/02"
+  },
+  {
+    "id": 93,
+    "readOnly": true,
+    "description": "Went hiking in nature. The weather was perfect, and I felt truly at peace.",
+    "score": 10,
+    "date": "2025/03/07"
+  },
+  {
+    "id": 94,
+    "readOnly": true,
+    "description": "Overslept and missed my first appointment. Felt rushed and scattered all day.",
+    "score": 3,
+    "date": "2025/03/12"
+  },
+  {
+    "id": 95,
+    "readOnly": true,
+    "description": "Tried a new recipe and it turned out amazing. Everyone loved it!",
+    "score": 8,
+    "date": "2025/03/17"
+  },
+  {
+    "id": 96,
+    "readOnly": true,
+    "description": "Had a terrible headache that wouldn’t go away. I couldn’t focus on anything.",
+    "score": 1,
+    "date": "2025/03/22"
+  },
+  {
+    "id": 97,
+    "readOnly": true,
+    "description": "Visited a museum I’ve never been to. It was surprisingly interesting and refreshing.",
+    "score": 7,
+    "date": "2025/03/27"
+  },
+  {
+    "id": 98,
+    "readOnly": true,
+    "description": "Got into a small argument with someone close. We resolved it, but it left me drained.",
+    "score": 4,
+    "date": "2025/04/01"
+  },
+  {
+    "id": 99,
+    "readOnly": true,
+    "description": "Took a break from screens and spent time reading in the sun. It felt healing.",
+    "score": 9,
+    "date": "2025/04/06"
+  },
+  {
+    "id": 100,
+    "readOnly": true,
+    "description": "Everything felt like too much today. I was overwhelmed by even small tasks.",
+    "score": 2,
+    "date": "2025/04/11"
+  },
+  {
+    "id": 101,
+    "readOnly": true,
+    "description": "Had a creative burst and made something I’m really proud of. Felt accomplished.",
+    "score": 10,
+    "date": "2025/04/16"
+  },
+  {
+    "id": 102,
+    "readOnly": true,
+    "description": "Spent too much time scrolling on my phone and ended up feeling kind of empty.",
+    "score": 3,
+    "date": "2025/04/21"
+  },
+  {
+    "id": 103,
+    "readOnly": true,
+    "description": "Went out for coffee and had a great conversation with someone unexpected.",
+    "score": 8,
+    "date": "2025/04/26"
+  },
+  {
+    "id": 104,
+    "readOnly": true,
+    "description": "Felt ignored and disconnected. Nothing I did today seemed to matter.",
+    "score": 2,
+    "date": "2025/05/01"
+  },
+  {
+    "id": 105,
+    "readOnly": true,
+    "description": "Tried something new and it went better than I imagined. Felt brave and satisfied.",
+    "score": 9,
+    "date": "2025/05/05"
+  },
+  {
+    "id": 106,
+    "readOnly": true,
+    "description": "Had a quiet day with lots of reflection. Didn’t feel good or bad, just neutral.",
+    "score": 5,
+    "date": "2025/05/08"
+  },
+  {
+    "id": 107,
+    "readOnly": true,
+    "description": "Was surrounded by negativity and it really dragged down my mood.",
+    "score": 3,
+    "date": "2025/05/11"
+  },
+  {
+    "id": 108,
+    "readOnly": true,
+    "description": "Got great feedback on something I’ve been working hard on. Felt seen and appreciated.",
+    "score": 10,
+    "date": "2025/05/14"
+  },
+  {
+    "id": 109,
+    "readOnly": true,
+    "description": "Woke up early, had a smooth day, and ended with a walk under the stars. A peaceful one.",
+    "score": 8,
+    "date": "2025/05/18"
   }
 ]
