@@ -5,7 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-import static com.akiacevedo.life_line_back_end.repository.DayReader.ReadDays;
+import static com.akiacevedo.life_line_back_end.repository.DayFileManager.ReadDays;
+
 @Repository
 public class DayRepository {
     private List<Day> days = ReadDays();
