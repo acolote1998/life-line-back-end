@@ -21,4 +21,8 @@ public class DayController {
         this.service = service;
     }
 
+    @GetMapping
+    public ResponseEntity<List<Day>> getDays() {
+        return ResponseEntity.ok(service.getDays());
+    }
 }
