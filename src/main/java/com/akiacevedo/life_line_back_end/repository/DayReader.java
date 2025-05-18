@@ -10,7 +10,7 @@ import java.util.List;
 
 public class DayReader {
 
-    public List<Day> readDays() {
+    public static List<Day> ReadDays() {
         ObjectMapper mapper = new ObjectMapper();
         try {
             File jsonFile = new File("src/main/resources/static/days/days.json");
