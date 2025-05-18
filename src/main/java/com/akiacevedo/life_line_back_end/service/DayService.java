@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class DayService {
@@ -25,6 +26,14 @@ private final DayRepository repository;
     }
 
     public List<Day> getDays(){
+    return repository.getDays();
+    }
+
+    public List<Day> createDay(Day day){
+    List<Day> oldDays = repository.getDays();
+    List<Day> daysWithoutRepetition =  oldDays.stream().filter(oldDay -> oldDay.getId()!=day.getId()).collect(Collectors.toList());
+    daysWithoutRepetition.add(day);
+    repository.setDays(daysWithoutRepetition);
     return repository.getDays();
     }
 }

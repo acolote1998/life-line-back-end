@@ -12,7 +12,7 @@ public class LifeLineBackEndApplication {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context =  SpringApplication.run(LifeLineBackEndApplication.class, args);
 		DayService service = context.getBean(DayService.class);
-		System.out.println(service.getDayById(1));
+		System.out.println(service.getDays());
 	}
 
 }
