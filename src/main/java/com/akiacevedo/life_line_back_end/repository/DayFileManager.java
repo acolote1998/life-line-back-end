@@ -13,16 +13,11 @@ public class DayFileManager {
 
     public static List<Day> ReadDays() {
         ObjectMapper mapper = new ObjectMapper();
-
-        InputStream input = DayFileManager.class.getClassLoader().getResourceAsStream("static/days.json");
-        if (input == null) {
-            throw new RuntimeException("days.json not found in classpath at static/days.json");
-        }
+        File file = new File("src/main/resources/static/days.json");
 
         try {
-            List<Day> days = mapper.readValue(input, new TypeReference<List<Day>>() {
+            return mapper.readValue(file, new TypeReference<List<Day>>() {
             });
-            return days;
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("Error reading days.json", e);
