@@ -17,7 +17,7 @@ public class DayRepository {
     }
 
     public void setDays(List<Day> days) {
-        this.days = days;
         WriteDays(days);
+        this.days = ReadDays();
     }
 }
