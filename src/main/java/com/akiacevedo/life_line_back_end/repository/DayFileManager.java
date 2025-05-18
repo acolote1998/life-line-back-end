@@ -30,7 +30,7 @@ public class DayFileManager {
         }
     }
 
-    public static void writeDays(List<Day> days) {
+    public static void WriteDays(List<Day> days) {
         ObjectMapper mapper = new ObjectMapper();
 
         File file = new File("src/main/resources/static/days.json");
