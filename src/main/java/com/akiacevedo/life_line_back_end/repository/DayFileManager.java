@@ -14,7 +14,6 @@ public class DayFileManager {
     public static List<Day> ReadDays() {
         ObjectMapper mapper = new ObjectMapper();
 
-        // Load resource from classpath
         InputStream input = DayFileManager.class.getClassLoader().getResourceAsStream("static/days.json");
         if (input == null) {
             throw new RuntimeException("days.json not found in classpath at static/days.json");

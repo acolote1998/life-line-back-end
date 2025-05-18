@@ -5,7 +5,6 @@ import com.akiacevedo.life_line_back_end.model.DayRequestDto;
 import com.akiacevedo.life_line_back_end.repository.DayRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
