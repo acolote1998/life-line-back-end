@@ -39,6 +39,7 @@ public class DayService {
         }
         List<Day> oldDays = repository.getDays();
         Day newDay = new Day();
+        newDay.setReadOnly(true);
         newDay.setDescription(day.description());
         newDay.setScore(day.score());
         newDay.setId((oldDays.getLast().getId()) + 1);
