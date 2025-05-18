@@ -4,9 +4,7 @@ import com.akiacevedo.life_line_back_end.model.Day;
 import com.akiacevedo.life_line_back_end.service.DayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +22,10 @@ public class DayController {
     @GetMapping
     public ResponseEntity<List<Day>> getDays() {
         return ResponseEntity.ok(service.getDays());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Day> getDaysById(@PathVariable int id) {
+        return ResponseEntity.ok(service.getDayById(id));
     }
 }
