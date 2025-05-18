@@ -46,7 +46,7 @@ public class DayService {
         LocalDate today = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
         newDay.setDate(today.format(formatter));
-        List<Day> daysWithoutRepetition = oldDays.stream().filter(oldDay -> oldDay.getId() != newDay.getId()).collect(Collectors.toList());
+        List<Day> daysWithoutRepetition = oldDays.stream().filter(oldDay -> !oldDay.getDate().equals(newDay.getDate())).collect(Collectors.toList());
         daysWithoutRepetition.add(newDay);
         repository.setDays(daysWithoutRepetition);
         return newDay;
