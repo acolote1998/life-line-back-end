@@ -52,11 +52,3 @@ public class DayService {
         return newDay;
     }
 }
-
-/*
-    private int id;
-    private boolean readOnly;
-    private String description;
-    private int score;
-    private String date;
- */
