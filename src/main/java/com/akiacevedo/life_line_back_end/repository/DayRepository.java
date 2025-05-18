@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 import static com.akiacevedo.life_line_back_end.repository.DayFileManager.ReadDays;
+import static com.akiacevedo.life_line_back_end.repository.DayFileManager.WriteDays;
 
 @Repository
 public class DayRepository {
@@ -17,5 +18,6 @@ public class DayRepository {
 
     public void setDays(List<Day> days) {
         this.days = days;
+        WriteDays(days);
     }
 }
