@@ -5,6 +5,7 @@ import com.akiacevedo.life_line_back_end.model.DayRequestDto;
 import com.akiacevedo.life_line_back_end.repository.DayRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -32,7 +33,10 @@ public class DayService {
         return repository.getDays();
     }
 
-    public void createDay(DayRequestDto day) {
+    public Day createDay(DayRequestDto day) {
+        if (day.description().isEmpty() || day.score() <= 0 || day.score() > 10) {
+            throw new IllegalArgumentException("Day format is not valid");
+        }
         List<Day> oldDays = repository.getDays();
         Day newDay = new Day();
         newDay.setDescription(day.description());
@@ -44,6 +48,7 @@ public class DayService {
         List<Day> daysWithoutRepetition = oldDays.stream().filter(oldDay -> oldDay.getId() != newDay.getId()).collect(Collectors.toList());
         daysWithoutRepetition.add(newDay);
         repository.setDays(daysWithoutRepetition);
+        return newDay;
     }
 }
 
