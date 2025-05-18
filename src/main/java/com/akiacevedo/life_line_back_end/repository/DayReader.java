@@ -14,8 +14,6 @@ public class DayReader {
         ObjectMapper mapper = new ObjectMapper();
         try {
             File jsonFile = new File("src/main/resources/static/days/days.json");
-
-            // Nota: TypeReference es necesaria para deserializar listas
             List<Day> days = mapper.readValue(jsonFile, new TypeReference<List<Day>>() {});
             return days;
 
