@@ -7,14 +7,6 @@ public class Day {
     private int score;
     private String date;
 
-    public Day(int id, boolean readOnly, String description, int score, String date) {
-        this.id = id;
-        this.readOnly = readOnly;
-        this.description = description;
-        this.score = score;
-        this.date = date;
-    }
-
     public int getId() {
         return id;
     }
@@ -53,5 +45,16 @@ public class Day {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Day{" +
+                "id=" + id +
+                ", readOnly=" + readOnly +
+                ", description='" + description + '\'' +
+                ", score=" + score +
+                ", date='" + date + '\'' +
+                '}';
     }
 }
