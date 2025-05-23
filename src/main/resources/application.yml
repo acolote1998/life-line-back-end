@@ -10,10 +10,7 @@ spring:
     hibernate:
       ddl-auto: create-drop
     defer-datasource-initialization: true
-
-    # with the lines above, we already create the tables and load the data defalt "data.sql", the below instruction
-    # we only use it if we want specifically for postgress to use schema-postgresql.sql #data-postgresql.sql instead of data.sql
-#  sql:
-#    init:
-#      platform: postgresql
-#      mode: always
+  sql:
+    init:
+      platform: postgresql
+      mode: always
