@@ -1,18 +1,23 @@
 package com.akiacevedo.life_line_back_end.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Day {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "read_only")
     private boolean readOnly;
+
+    @Column
     private String description;
+
+    @Column
     private int score;
+
+    @Column
     private String date;
 
     public Long getId() {
