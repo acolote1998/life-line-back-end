@@ -28,7 +28,7 @@ public class DayController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Day> getDaysById(@PathVariable int id) {
+    public ResponseEntity<Day> getDaysById(@PathVariable Long id) {
         return ResponseEntity.ok(service.getDayById(id));
     }
 

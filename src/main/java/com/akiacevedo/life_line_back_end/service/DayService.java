@@ -20,12 +20,8 @@ public class DayService {
         this.repository = repository;
     }
 
-    public Day getDayById(int id) {
-        return repository.getDays()
-                .stream()
-                .filter(day -> day.getId() == id)
-                .findFirst()
-                .orElse(null);
+    public Day getDayById(Long id) {
+        return repository.findDayById(id);
     }
 
     public List<Day> getDays() {
