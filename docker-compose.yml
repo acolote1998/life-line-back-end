@@ -1,1 +1,15 @@
 version: '3.8'
+
+services:
+  postgres:
+    image: 'postgres:15'
+    container_name: 'lifeline-postgres-container'
+    environment:
+      - POSTGRES_USER=aki
+      - POSTGRES_PASSWORD=aki
+      - POSTGRES_DB=lifelinedb
+    volumes:
+      - ./data/pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: always
