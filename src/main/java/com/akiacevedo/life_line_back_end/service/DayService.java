@@ -3,6 +3,7 @@ package com.akiacevedo.life_line_back_end.service;
 import com.akiacevedo.life_line_back_end.model.Day;
 import com.akiacevedo.life_line_back_end.model.DayRequestDto;
 import com.akiacevedo.life_line_back_end.repository.DayRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,7 @@ public class DayService {
         return repository.findAll();
     }
 
+    @Transactional
     public Day createDay(DayRequestDto day) {
         if (day.description().isEmpty() || day.score() <= 0 || day.score() > 10) {
             throw new IllegalArgumentException("Day format is not valid");
