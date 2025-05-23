@@ -28,7 +28,7 @@ public class DayService {
         return repository.findAll();
     }
 
-    public void createDay(DayRequestDto day) {
+    public Day createDay(DayRequestDto day) {
         if (day.description().isEmpty() || day.score() <= 0 || day.score() > 10) {
             throw new IllegalArgumentException("Day format is not valid");
         }
@@ -43,6 +43,6 @@ public class DayService {
         newDay.setDate(todayFormatedDate);
         newDay.setScore(day.score());
         newDay.setDescription(day.description());
-        repository.save(newDay);
+        return repository.save(newDay);
     }
 }
