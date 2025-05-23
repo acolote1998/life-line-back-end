@@ -1,4 +1,8 @@
 spring:
   application:
     name: life-line-back-end
-
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lifelinedb
+    username: aki
+    password: aki
+    driver-class-name: org.postgresql.Driver
