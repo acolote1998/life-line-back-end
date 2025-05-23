@@ -1,0 +1,4 @@
+spring:
+  application:
+    name: life-line-back-end
+
