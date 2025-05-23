@@ -28,22 +28,21 @@ public class DayService {
         return repository.findAll();
     }
 
-    public Day createDay(DayRequestDto day) {
+    public void createDay(DayRequestDto day) {
         if (day.description().isEmpty() || day.score() <= 0 || day.score() > 10) {
             throw new IllegalArgumentException("Day format is not valid");
         }
-        List<Day> oldDays = repository.getDays();
-        Day newDay = new Day();
-        newDay.setReadOnly(true);
-        newDay.setDescription(day.description());
-        newDay.setScore(day.score());
-        newDay.setId((oldDays.getLast().getId()) + 1);
         LocalDate today = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        newDay.setDate(today.format(formatter));
-        List<Day> daysWithoutRepetition = oldDays.stream().filter(oldDay -> !oldDay.getDate().equals(newDay.getDate())).collect(Collectors.toList());
-        daysWithoutRepetition.add(newDay);
-        repository.setDays(daysWithoutRepetition);
-        return newDay;
+        String todayFormatedDate = today.format(formatter);
+        if (repository.findDayByDate(todayFormatedDate) != null) {
+            repository.removeDayByDate(todayFormatedDate);
+        }
+        Day newDay = new Day();
+        newDay.setReadOnly(true);
+        newDay.setDate(todayFormatedDate);
+        newDay.setScore(day.score());
+        newDay.setDescription(day.description());
+        repository.save(newDay);
     }
 }
