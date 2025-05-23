@@ -13,3 +13,17 @@ services:
     ports:
       - 5432:5432
     restart: always
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: lifeline-pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: aki@aki.com
+      PGADMIN_DEFAULT_PASSWORD: aki
+    ports:
+      - "5433:5433"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    restart: always
+
+volumes:
+  pgadmin_data:
