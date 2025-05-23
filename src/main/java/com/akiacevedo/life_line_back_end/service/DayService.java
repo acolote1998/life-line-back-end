@@ -25,7 +25,7 @@ public class DayService {
     }
 
     public List<Day> getDays() {
-        return repository.getDays();
+        return repository.findAll();
     }
 
     public Day createDay(DayRequestDto day) {
