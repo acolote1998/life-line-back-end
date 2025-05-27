@@ -1,4 +1,4 @@
-INSERT INTO DAY (read_only, score, date, description)
+INSERT INTO DAYS (read_only, score, date, description)
 VALUES (true, 7, '2025/02/12',
         'Today was a challenging day, but I managed to complete my tasks successfully. I felt motivated and productive throughout the afternoon. Despite some difficulties, I kept a positive mindset and pushed through. Overall, it was a day of growth and progress.'),
        (true, 4, '2025/02/13',

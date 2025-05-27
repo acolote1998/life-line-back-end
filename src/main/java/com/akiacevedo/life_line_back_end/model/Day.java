@@ -3,6 +3,7 @@ package com.akiacevedo.life_line_back_end.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "days")
 public class Day {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,6 +20,18 @@ public class Day {
 
     @Column
     private String date;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Long getId() {
         return id;
