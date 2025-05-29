@@ -18,10 +18,9 @@ public class DaySecurity {
         http
                 .csrf((crsf -> crsf.disable()))
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.GET, "/days").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/days").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/days/*").permitAll()
-                        .anyRequest().authenticated()
+                        .requestMatchers("/days/byUser").authenticated()
+                        .requestMatchers("/days/byUser/*").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/days").authenticated()
                 )
                 .cors(withDefaults())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(withDefaults()));

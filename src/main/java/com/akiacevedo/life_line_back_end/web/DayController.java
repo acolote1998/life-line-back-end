@@ -4,7 +4,12 @@ import com.akiacevedo.life_line_back_end.model.Day;
 import com.akiacevedo.life_line_back_end.model.DayRequestDto;
 import com.akiacevedo.life_line_back_end.service.DayService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -22,14 +27,16 @@ public class DayController {
         this.service = service;
     }
 
-    @GetMapping
-    public ResponseEntity<List<Day>> getDays() {
-        return ResponseEntity.ok(service.getDays());
+    @GetMapping("/byUser")
+    public ResponseEntity<List<Day>> getDaysByUser(@AuthenticationPrincipal Jwt jwt) {
+        String dayOwnerId = jwt.getSubject();
+        return ResponseEntity.ok(service.getDaysByUser(dayOwnerId));
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Day> getDaysById(@PathVariable Long id) {
-        return ResponseEntity.ok(service.getDayById(id));
+    @GetMapping("/byUser/{id}")
+    public ResponseEntity<Day> getDaysByUserAndId(@AuthenticationPrincipal Jwt jwt, @PathVariable Long id) {
+        String dayOwnerId = jwt.getSubject();
+        return ResponseEntity.ok(service.getDayByUserAndId(id, dayOwnerId));
     }
 
     @PostMapping

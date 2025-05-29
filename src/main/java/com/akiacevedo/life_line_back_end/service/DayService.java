@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class DayService {
@@ -21,12 +20,12 @@ public class DayService {
         this.repository = repository;
     }
 
-    public Day getDayById(Long id) {
-        return repository.findDayById(id);
+    public Day getDayByUserAndId(Long id, String userId) {
+        return repository.findDayByIdAndUser_Id(id, userId);
     }
 
-    public List<Day> getDays() {
-        return repository.findAll();
+    public List<Day> getDaysByUser(String userId) {
+        return repository.findAllByUser_Id(userId);
     }
 
     @Transactional
