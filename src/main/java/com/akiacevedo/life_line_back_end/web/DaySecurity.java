@@ -20,6 +20,7 @@ public class DaySecurity {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.GET, "/days").permitAll()
                         .requestMatchers("/days/byUser").authenticated()
+                        .requestMatchers("/days/byUser/*").authenticated()
                         .requestMatchers(HttpMethod.POST, "/days").permitAll()
                         .requestMatchers(HttpMethod.GET, "/days/*").permitAll()
                         .anyRequest().authenticated()

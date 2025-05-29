@@ -24,6 +24,10 @@ public class DayService {
         return repository.findDayById(id);
     }
 
+    public Day getDayByUserAndId(Long id, String userId) {
+        return repository.findDayByIdAndUser_Id(id, userId);
+    }
+
     public List<Day> getDays() {
         return repository.findAll();
     }
