@@ -42,7 +42,8 @@ public class DayController {
     @PostMapping
     public ResponseEntity<Void> createDay(@AuthenticationPrincipal Jwt jwt, @RequestBody DayRequestDto day) {
         String dayOwnerId = jwt.getSubject();
-        Day createdDay = service.createDay(day, dayOwnerId);
+        String ownerName = jwt.getClaimAsString("name");
+        Day createdDay = service.createDay(day, dayOwnerId, ownerName);
         return ResponseEntity.created(URI.create("days/" + createdDay.getId())).build();
     }
 }

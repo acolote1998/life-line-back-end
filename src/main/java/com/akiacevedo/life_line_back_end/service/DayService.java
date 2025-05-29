@@ -33,7 +33,7 @@ public class DayService {
     }
 
     @Transactional
-    public Day createDay(DayRequestDto day, String ownerId) {
+    public Day createDay(DayRequestDto day, String ownerId, String ownerName) {
         if (day.description().isEmpty() || day.score() <= 0 || day.score() > 10) {
             throw new IllegalArgumentException("Day format is not valid");
         }
@@ -47,6 +47,7 @@ public class DayService {
         if (user == null) {
             user = new User();
             user.setId(ownerId);
+            user.setName(ownerName);
             userRepository.save(user);
         }
         Day newDay = new Day();
