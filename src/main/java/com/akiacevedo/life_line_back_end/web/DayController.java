@@ -27,20 +27,10 @@ public class DayController {
         this.service = service;
     }
 
-    @GetMapping
-    public ResponseEntity<List<Day>> getDays() {
-        return ResponseEntity.ok(service.getDays());
-    }
-
     @GetMapping("/byUser")
     public ResponseEntity<List<Day>> getDaysByUser(@AuthenticationPrincipal Jwt jwt) {
         String dayOwnerId = jwt.getSubject();
         return ResponseEntity.ok(service.getDaysByUser(dayOwnerId));
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Day> getDaysById(@PathVariable Long id) {
-        return ResponseEntity.ok(service.getDayById(id));
     }
 
     @GetMapping("/byUser/{id}")
