@@ -19,6 +19,7 @@ public class DaySecurity {
                 .csrf((crsf -> crsf.disable()))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.GET, "/days").permitAll()
+                        .requestMatchers("/days/byUser").authenticated()
                         .requestMatchers(HttpMethod.POST, "/days").permitAll()
                         .requestMatchers(HttpMethod.GET, "/days/*").permitAll()
                         .anyRequest().authenticated()
