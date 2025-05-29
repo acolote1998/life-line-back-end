@@ -1,6 +1,11 @@
 spring:
   application:
     name: life-line-back-end
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://trusted-finch-67.clerk.accounts.dev
   datasource:
     url: jdbc:postgresql://localhost:5432/lifelinedb
     username: aki
