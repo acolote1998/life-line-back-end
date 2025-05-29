@@ -13,4 +13,6 @@ public interface DayRepository extends ListCrudRepository<Day, Long> {
     List<Day> findDayByDate(String date);
 
     void removeDayByDate(String date);
+
+    List<Day> findAllByUser_Id(String userId);
 }

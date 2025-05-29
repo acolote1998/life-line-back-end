@@ -4,7 +4,11 @@ import com.akiacevedo.life_line_back_end.model.Day;
 import com.akiacevedo.life_line_back_end.model.DayRequestDto;
 import com.akiacevedo.life_line_back_end.service.DayService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -25,6 +29,13 @@ public class DayController {
     @GetMapping
     public ResponseEntity<List<Day>> getDays() {
         return ResponseEntity.ok(service.getDays());
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Day>> getDaysByUser(Authentication authentication) {
+        Jwt token = ((JwtAuthenticationToken) authentication).getToken();
+        String dayOwnerId = token.getClaimAsString("name");
+        return ResponseEntity.ok(service.getDaysByUser(dayOwnerId));
     }
 
     @GetMapping("/{id}")
