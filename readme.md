@@ -20,3 +20,5 @@ The backend, built with **Java Spring Boot**, powers the core functionality of t
 The project is designed to help users **reflect on their lives, identify patterns, and celebrate progress**. By turning daily reflections into a simple visual journey, _Life Line_ makes personal growth and self-awareness both accessible and meaningful.
 
 This repository contains the **backend component** of the application, which manages data storage, timeline logic, and calculations for averages and day scores.
+
+Frontend repository: https://github.com/acolote1998/life-line-front-end
